@@ -1,14 +1,21 @@
-#  Diabetes Risk Assessment – Machine Learning Pipeline
+#  Diabetes Risk Assessment – End-to-End Machine Learning Pipeline
 
-Machine Learning pipeline for assessing diabetes risk and stratifying patients using the BRFSS 2015 dataset. This project integrates data preprocessing, exploratory analysis, feature engineering, clustering, and predictive modeling to support early risk detection and data-driven healthcare insights.
+An end-to-end machine learning pipeline for diabetes risk assessment and patient stratification using the BRFSS 2015 public health dataset.  
+
+This project integrates data preprocessing, exploratory data analysis, feature engineering, clustering, and predictive modeling to demonstrate how machine learning can support early disease detection and healthcare analytics.
 
 ---
 
 ##  Project Objective
 
-This project aims to develop a structured machine learning pipeline to assess diabetes risk and classify patients into Low, Medium, and High-risk groups.  
+The objective of this project is to design and implement a structured machine learning workflow capable of:
 
-By leveraging predictive modeling and clustering techniques, the system demonstrates how data science can support early intervention strategies and public health decision-making.
+- Predicting diabetes risk from demographic and clinical indicators  
+- Stratifying patients into Low, Medium, and High-risk groups  
+- Evaluating model performance under class imbalance  
+- Demonstrating practical ML applications in public health analytics  
+
+The system illustrates how predictive modeling can support early intervention strategies and data-driven healthcare decision-making.
 
 ---
 
@@ -20,49 +27,78 @@ By leveraging predictive modeling and clustering techniques, the system demonstr
 
 ##  Key Features
 
-- Data cleaning & duplicate removal  
-- Exploratory Data Analysis (bar charts, pie charts, visual insights)  
+- Data cleaning and duplicate removal  
+- Exploratory Data Analysis (EDA) with statistical and visual insights  
 - Feature Engineering:
-  - Health Risk Score
+  - Health Risk Score (HighBP + HighChol)
   - BMI Category Classification  
-- Patient Risk Clustering (Low / Medium / High)  
+- Patient Risk Clustering (Low / Moderate / High Risk)
 - Supervised Machine Learning Models:
   - Logistic Regression
   - Random Forest
-  - Linear SVM
-  - Artificial Neural Network (ANN)  
-- ROC Curve & Classification Metrics  
-- 3D Visualizations for patient risk stratification  
+  - Linear Support Vector Machine (SVM)
+  - Artificial Neural Network (ANN)
+- ROC Curve analysis and classification metrics
+- 3D visualization of risk stratification patterns
 
 ---
 
 ##  Machine Learning Workflow
 
-Raw Data → Data Cleaning → Feature Engineering →  
-Clustering → Model Training → Model Evaluation → Risk Prediction
+Raw Data  
+→ Data Cleaning  
+→ Feature Engineering  
+→ Risk Clustering  
+→ Model Training  
+→ Model Evaluation  
+→ Risk Prediction & Interpretation  
 
+---
 
+## Model Performance
+
+The dataset exhibits class imbalance, with diabetes prevalence of approximately **15.3%**, making evaluation metrics beyond accuracy essential.
+
+### Logistic Regression (Test Set)
+
+- Accuracy: **84.8%**
+- Precision: **51.5%**
+- Recall (Sensitivity): **5.3%**
+- F1 Score: **9.6%**
+- ROC-AUC Score: **0.772**
+
+### Model Comparison (Cross-Validation Accuracy)
+
+- Logistic Regression: **~84.7%**
+- Random Forest: **~84.7%**
+- Linear SVM: **~84.6%**
+- ANN: **~84.1%**
+
+### Interpretation
+
+- High overall accuracy reflects strong identification of non-diabetic cases.
+- ROC-AUC of 0.772 indicates solid discriminatory performance.
+- Low recall highlights the impact of class imbalance and the need for techniques such as threshold tuning or class weighting in medical screening systems.
+- Accuracy alone is not sufficient due to imbalance; AUC and sensitivity provide more meaningful evaluation in healthcare contexts.
 
 ---
 
 ##  Dataset
 
-**BRFSS 2015** – Behavioral Risk Factor Surveillance System  
+**BRFSS 2015 – Behavioral Risk Factor Surveillance System**  
 Source: https://www.cdc.gov/brfss/
 
-The dataset includes demographic, lifestyle, and health-related indicators used to evaluate diabetes risk.
+The dataset contains demographic, behavioral, and clinical health indicators collected across the United States and is widely used for public health research.
 
 ---
 
-##  Tech Stack
+## Technology Stack
 
 - Python 3.x  
-- Pandas  
-- NumPy  
+- Pandas & NumPy  
 - Scikit-learn  
-- Matplotlib  
-- Seaborn  
-- TensorFlow / Keras (for ANN)  
+- Matplotlib & Seaborn  
+- TensorFlow / Keras (Neural Networks)  
 - Jupyter Notebook  
 
 ---
@@ -76,34 +112,5 @@ git clone https://github.com/mrselemogo777-gif/diabetes-risk-assesment-ML.git
 # Navigate into the project directory
 cd diabetes-risk-assesment-ML
 
-# Install required dependencies
+# Install dependencies
 pip install -r requirements.txt
-```
-
----
-
-##  Requirements
-
-Make sure you have:
-
-- Python 3.x  
-- pip  
-
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-##  Potential Impact
-
-This project demonstrates how machine learning can be applied to healthcare data for:
-
-- Early risk identification  
-- Patient stratification  
-- Data-driven public health insights  
-- Preventive healthcare strategy support  
-
-It reflects how predictive analytics can contribute to scalable healthcare solutions in both developed and developing contexts.
