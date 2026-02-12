@@ -1,7 +1,9 @@
 # Diabetes Risk Assessment ML Pipeline 
 
 Machine Learning pipeline for assessing diabetes risk and stratifying patients using BRFSS 2015 dataset. Includes data cleaning, exploratory analysis, feature engineering, clustering, and predictive modeling.
+## Demo Video
 
+[![Watch the Demo](https://img.youtube.com/vi/hsJrlKPwQ28/0.jpg)](https://www.youtube.com/watch?v=hsJrlKPwQ28)
 ---
 
 ## Features 
